@@ -1,84 +1,97 @@
-/* Program:
-	Author:
-	Class:
-	Date:
-	Description:
-	I certify that the code below is my own work.
-	Exception(s): N/A
+/* Program: Lab 8
+   Author: Ricardo Diaz
+   Class: CSCI 110
+   Date: 10/31/23
+   Description: Create the program for Lab 8
+   I certify that the code below is my own work.
+   Exception(s): N/A
 */
+
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
 void inputPints(double pints[], int hours);
+double calcAverage(double pints[], int hours);
+double getHigh(double pints[], int hours);
+double getLow(double pints[], int hours);
 
 int main()
 {
-	const int MAX_HOURS = 7;
-	
-	string again = "yes";
-	double pints[MAX_HOURS];
-	double averagePints, highPints, lowPints;
+    const int MAX_HOURS = 7;
+    double pints[MAX_HOURS] = { 0.0 };
 
-	while (again == "yes")
-	{
-		inputPints(pints[], MAX_HOURS);
-		cout << "Do you want to run again (yes or no)?" << endl;
-		cin >> again;
+    cout << fixed << setprecision(1);
+    string again = "yes";
+    double averagePints, highPints, lowPints;
 
-	}
-	averagePints = calcAverage(pints[], MAX_HOURS);
-	highPints = getHigh(pints[], MAX_HOURS);
+    while (again == "yes")
+    {
+        inputPints(pints, MAX_HOURS);
+        averagePints = calcAverage(pints, MAX_HOURS);
+        highPints = getHigh(pints, MAX_HOURS);
+        lowPints = getLow(pints, MAX_HOURS);
+        cout << "Average Pints: " << averagePints << endl;
+        cout << "Highest pints: " << highPints << endl;
+        cout << "Lowest pints: " << lowPints << endl << endl;
+        cout << "Do you want to run again (yes or no)?" << endl;
+        cin >> again;
+    }
 
-	return 0;
+    return 0;
 }
 
-void inputPints(double pints[], int MAX_HOURS)
+void inputPints(double pints[], int hours)
 {
-	int counter = 0;
-
-	for (counter = 0; counter < 7; counter++)
-	{
-		cout << "Enter pints collected:";
-		cin >> pints[counter];
-
-	}
-
-
+    for (int counter = 0; counter < hours; counter++)
+    {
+        cout << "Enter pints collected:";
+        cin >> pints[counter];
+    }
 }
 
-int calcAverage(double pints[], int MAX_HOURS)
+double calcAverage(double pints[], int hours)
 {
-	int counter;
-	double totalPints = 0, averagePints;
+    double totalPints = 0;
+    double averagePints;
 
-	for (counter = 0; counter < 7; counter++)
-	{
-		totalPints = totalPints + pints[counter];
+    for (int counter = 0; counter < hours; counter++)
+    {
+        totalPints += pints[counter];
+    }
 
-	}
-	averagePints = totalPints / MAX_HOURS;
-
-	return averagePints;
-
+    averagePints = totalPints / hours;
+    return averagePints;
 }
 
-int getHigh(double pints[], int MAX_HOURS)
+double getHigh(double pints[], int hours)
 {
-	int index;
-	double highest = pints[0];
+    double highest = pints[0];
 
-	for (index = 1; index <= 6; index++)
-	{
-		if (pints[index] > highest)
-		{
-			highPints = pints[index]
+    for (int index = 1; index < hours; index++)
+    {
+        if (pints[index] > highest)
+        {
+            highest = pints[index];
+        }
+    }
 
-		}
+    return highest;
+}
 
+double getLow(double pints[], int hours)
+{
+    double lowest = pints[0];
 
-	}
+    for (int index = 1; index < hours; index++)
+    {
+        if (pints[index] < lowest)
+        {
+            lowest = pints[index];
+        }
+    }
 
-	return highPints;
+    return lowest;
 }
