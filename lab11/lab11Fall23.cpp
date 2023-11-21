@@ -54,8 +54,9 @@ int main()
 	cout << "There are " << count << " problems in the file." << endl;
 
 	// *** Add code to select a random problem; display it and its length.
-	randomProblem = srand(problems)
-
+	int randomIndex = srand() % count;
+	randomProblem = problems[randomIndex];
+	cout << randomProblem
 
 	// *** Add code below to determine the type of problem: +, -, *, or /
 	// by calling findOperator(randomProblem).
