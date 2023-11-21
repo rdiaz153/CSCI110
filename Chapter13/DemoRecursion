@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+void display(int n);
+
+int main()
+{
+
+
+    display(5);
+    return 0;
+
+}
+
+void display(int n)
+{
+    std::cout << n << std::endl;
+
+    display(n);
+
+
+}
