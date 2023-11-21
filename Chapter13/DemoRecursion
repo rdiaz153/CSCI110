@@ -3,12 +3,14 @@
 using namespace std;
 
 void display(int n);
-
+int recFact(int n);
 int main()
 {
 
 
     display(5);
+    
+    cout << recFact(5) << endl;
     return 0;
 
 }
@@ -18,6 +20,16 @@ void display(int n)
     std::cout << n << std::endl;
 
     display(n);
+
+
+}
+
+int recFact(int n)
+{
+    if (n == 0) // base case 
+        return 1;
+    
+    return n * recFact(n - 1);
 
 
 }
