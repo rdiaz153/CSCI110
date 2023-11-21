@@ -39,13 +39,15 @@ int main()
 		return 0;
 	}
 
+	int a;
+
 	// The following loop input problems from a file using EOF.
 	getline(myFile, oneProblem);
 	while (!myFile.eof())
 	{
 		// *** Add code below to store one problem in the array.
-		problems[count] = oneProblem
-		
+		problems[count] = oneProblem;
+
 		// *** Add code below to read one line from the file.
 		myFile >> a;
 
@@ -54,18 +56,37 @@ int main()
 	cout << "There are " << count << " problems in the file." << endl;
 
 	// *** Add code to select a random problem; display it and its length.
-	int randomIndex = srand() % count;
+	int randomIndex = rand() % count;
 	randomProblem = problems[randomIndex];
-	cout << randomProblem
+	cout << "Random problem: " << randomProblem << endl;
 
 	// *** Add code below to determine the type of problem: +, -, *, or /
 	// by calling findOperator(randomProblem).
-
+	op = findOperator(randomProblem);
 
 
 	// *** Add code below to print the type of problem,
 	// addition, subtraction, multiplication, or division
-
+	if (op == '+')
+	{
+		cout << "Problem: addition" << endl;
+	}
+	else if (op == '-')
+	{
+		cout << "Problem: subtraction" << endl;
+	}
+	else if (op == '*')
+	{
+		cout << "Problem: multiplication" << endl;
+	}
+	else if (op == '/')
+	{
+		cout << "Problem: division" << endl;
+	}
+	else 
+	{
+		cout << "Problem: unknown" << endl;
+	}
 
 	// Close the file.
 	myFile.close();
