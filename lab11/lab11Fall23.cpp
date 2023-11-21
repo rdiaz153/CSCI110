@@ -46,10 +46,12 @@ int main()
 	while (!myFile.eof())
 	{
 		// *** Add code below to store one problem in the array.
+		int count = 0;
 		problems[count] = oneProblem;
 
 		// *** Add code below to read one line from the file.
-		myFile >> a;
+		getline(myFile, oneProblem);
+		count++;
 
 	}
 
@@ -59,6 +61,7 @@ int main()
 	int randomIndex = rand() % count;
 	randomProblem = problems[randomIndex];
 	cout << "Random problem: " << randomProblem << endl;
+	cout << "Length: " << randomProblem.length() << endl;
 
 	// *** Add code below to determine the type of problem: +, -, *, or /
 	// by calling findOperator(randomProblem).
@@ -83,7 +86,7 @@ int main()
 	{
 		cout << "Problem: division" << endl;
 	}
-	else 
+	else
 	{
 		cout << "Problem: unknown" << endl;
 	}
