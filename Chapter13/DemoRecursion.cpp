@@ -10,16 +10,19 @@ int main()
 
     display(5);
     
-    cout << recFact(5) << endl;
+    // cout << "5! = " << recFact(5) << endl;
     return 0;
 
 }
 
 void display(int n)
 {
-    std::cout << n << std::endl;
+    if (n > 0)
+    {
+        // cout << n << endl;
+        display (n-1);
 
-    display(n);
+    }
 
 
 }
