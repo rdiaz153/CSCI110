@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Ricardo/source/repos/CSCI110-1/project2",
-      "program": "c:/Users/Ricardo/source/repos/CSCI110-1/project2/build/Debug/outDebug",
+      "cwd": "c:/Users/Ricardo/source/repos/CSCI110-1",
+      "program": "c:/Users/Ricardo/source/repos/CSCI110-1/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
