@@ -22,7 +22,7 @@ int main()
         cout << "Please enter your option: ";
         cin >> menuOption;
 
-        switch (userOption);
+        switch (menuOption);
         {
             case 1:
                 factorial(int 5);
