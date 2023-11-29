@@ -87,6 +87,6 @@ void printReverse(int arr[], int n)
     else
     {
         cout << arr[n - 1] << " ";
-        printReverse[arr[],n - 1];
+        printReverse[arr,n - 1];
     }
 }
