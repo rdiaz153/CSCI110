@@ -74,9 +74,9 @@ int mystery(int a, int b)
 {
     int result;
     if (b == 0)
-        result = 1
+        result = 1;
     else
-        result = a * mystery(a, b - 1)
+        result = a * mystery(a, b - 1);
     return result;
 }
 
