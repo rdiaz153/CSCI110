@@ -5,10 +5,22 @@ using namespace std;
 int factorial(int n);
 int recFib(int n);
 int mystery(int a, int b);
-int printReverse(int arr[],int n);
+void printReverse(int arr[],int n);
 
 int main()
 {
+    int menuOption;
+
+    cout << "Program Menu\n";
+    cout << "1. Recursive Factorial\n";
+    cout << "2. Recursive Fibonacci\n";
+    cout << "3. Mystery Function\n";
+    cout << "4. Print Reverse Array\n";
+    cout << "5. Quit\n";
+
+    cout << "Please enter your option: ";
+    cin >> menuOption
+
 
 
 
@@ -46,4 +58,15 @@ int mystery(int a, int b)
     else
         result = a * mystery(a, b - 1)
     return result;
+}
+
+void printReverse(int arr[], int n)
+{
+    if (n <= 0)
+        return;
+    else
+    {
+        cout << arr[n - 1] << " ";
+        printReverse[arr[],n - 1];
+    }
 }
