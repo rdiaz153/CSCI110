@@ -22,7 +22,7 @@ int main()
         cout << "Please enter your option: ";
         cin >> menuOption;
 
-        switch (menuOption);
+        switch (menuOption)
         {
             case 1:
                 factorial(5);
@@ -42,6 +42,7 @@ int main()
             default:
                 cout << "Invalid option, please choose a correct menu selection.\n";
         }
+
     } while (menuOption != 5);
 
     return 0;
