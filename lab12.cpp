@@ -25,13 +25,13 @@ int main()
         switch (menuOption)
         {
             case 1:
-                factorial(5);
+                cout << factorial(5) << endl;
                 break;
             case 2:
-                recFib(7);
+                cout << recFib(7) << endl;
                 break;
             case 3:
-                mystery(10,3);
+                cout << mystery(10,3) << endl;
                 break;
             case 4: 
                 printReverse(arr, 5);
