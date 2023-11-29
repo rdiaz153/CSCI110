@@ -25,7 +25,7 @@ int main()
         switch (menuOption);
         {
             case 1:
-                factorial(int 5);
+                factorial(5);
                 break;
             case 2:
                 recFib(7);
