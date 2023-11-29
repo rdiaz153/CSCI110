@@ -34,7 +34,7 @@ int main()
                 mystery(10,3);
                 break;
             case 4: 
-                printReverse(arr, 5)
+                printReverse(arr, 5);
                 break;
             case 5:
                 cout << "Exiting program.\n";
