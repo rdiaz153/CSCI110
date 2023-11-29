@@ -9,26 +9,40 @@ void printReverse(int arr[],int n);
 
 int main()
 {
-    int menuOption;
-
-    cout << "Program Menu\n";
-    cout << "1. Recursive Factorial\n";
-    cout << "2. Recursive Fibonacci\n";
-    cout << "3. Mystery Function\n";
-    cout << "4. Print Reverse Array\n";
-    cout << "5. Quit\n";
-
-    cout << "Please enter your option: ";
-    cin >> menuOption;
-
-    switch (userOption);
+    int menuOption, arr[5] = {1, 2, 3, 4, 5};
+    do
     {
-        case 1:
-            cout << ""
-    }
+        cout << "Program Menu\n";
+        cout << "1. Recursive Factorial\n";
+        cout << "2. Recursive Fibonacci\n";
+        cout << "3. Mystery Function\n";
+        cout << "4. Print Reverse Array\n";
+        cout << "5. Quit\n";
 
+        cout << "Please enter your option: ";
+        cin >> menuOption;
 
-
+        switch (userOption);
+        {
+            case 1:
+                factorial(int 5);
+                break;
+            case 2:
+                recFib(7);
+                break;
+            case 3:
+                mystery(10,3);
+                break;
+            case 4: 
+                printReverse(arr, 5)
+                break;
+            case 5:
+                cout << "Exiting program.\n";
+                break;
+            default:
+                cout << "Invalid option, please choose a correct menu selection.\n";
+        }
+    } while (menuOption != 5);
 
     return 0;
 }
