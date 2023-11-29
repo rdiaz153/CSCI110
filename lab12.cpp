@@ -67,7 +67,7 @@ int recFib(int n)
         result = 1;
     else 
         result = recFib(n - 1) + recFib(n - 2);
-
+    return result;
 }
 
 int mystery(int a, int b)
