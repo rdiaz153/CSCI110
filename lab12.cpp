@@ -19,7 +19,13 @@ int main()
     cout << "5. Quit\n";
 
     cout << "Please enter your option: ";
-    cin >> menuOption
+    cin >> menuOption;
+
+    switch (userOption);
+    {
+        case 1:
+            cout << ""
+    }
 
 
 
