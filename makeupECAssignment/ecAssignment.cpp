@@ -66,7 +66,7 @@ int main()
 
         if (tolower(userAgain) == 'n')
         {
-            cout << "\n\nGame over. You won " << gamesWon << "out of " << gamesPlayed << " games."
+            cout << "\n\nGame over. You won " << gamesWon << "out of " << gamesPlayed << " games.";
         }
 
     }
