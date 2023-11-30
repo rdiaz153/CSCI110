@@ -61,9 +61,9 @@ int main()
         cin >> userAgain;
         if (tolower(userAgain) == 'y')
         {
-            gamesPlayed++
+            gamesPlayed++;
         }
-        
+
         if (tolower(userAgain) == 'n')
         {
             cout << "\n\nGame over. You won " << gamesWon << "out of " << gamesPlayed << " games."
