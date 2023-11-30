@@ -33,7 +33,7 @@ int main()
 
         guessesLeft = 5;
      
-        while(guessesLeft > 0)
+        while(guessesLeft >= 1)
         {   cout << "Enter your guess: ";
             cin >> userNumber;
             if (userNumber == correctMinusUser || userNumber == correctPlusUser || userNumber == correctNumber)
@@ -52,11 +52,12 @@ int main()
                 guessesLeft--;
                 cout << "Higher. You have " << guessesLeft << " guesses left.\n";
             }
-            else if (guessesLeft = 0)
-            {
-                cout << "You lost. Actual number is " << correctNumber << ".\n\n";
-            }
+        }   
+        if (guessesLeft == 0)
+        {
+            cout << "You lost. Actual number is " << correctNumber << ".\n\n";
         }
+        
         cout << "Do you want to play again (y/n)?: ";
         cin >> userAgain;
         if (tolower(userAgain) == 'y')
