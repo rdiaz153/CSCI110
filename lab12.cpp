@@ -5,11 +5,11 @@ using namespace std;
 int factorial(int n);
 int recFib(int n);
 int mystery(int a, int b);
-void printReverse(int arr[],int n);
+void printReverse(int arr[], int n);
 
 int main()
 {
-    int menuOption, arr[5] = {1, 2, 3, 4, 5};
+    int menuOption, arr[5] = { 1, 2, 3, 4, 5 };
     do
     {
         cout << "Program Menu\n";
@@ -24,23 +24,23 @@ int main()
 
         switch (menuOption)
         {
-            case 1:
-                cout << factorial(5) << endl;
-                break;
-            case 2:
-                cout << recFib(7) << endl;
-                break;
-            case 3:
-                cout << mystery(10,3) << endl;
-                break;
-            case 4: 
-                printReverse(arr, 5);
-                break;
-            case 5:
-                cout << "Exiting program.\n";
-                break;
-            default:
-                cout << "Invalid option, please choose a correct menu selection.\n";
+        case 1:
+            cout << factorial(5) << endl;
+            break;
+        case 2:
+            cout << recFib(7) << endl;
+            break;
+        case 3:
+            cout << mystery(10, 3) << endl;
+            break;
+        case 4:
+            printReverse(arr, 5);
+            break;
+        case 5:
+            cout << "Exiting program.\n";
+            break;
+        default:
+            cout << "Invalid option, please choose a correct menu selection.\n";
         }
 
     } while (menuOption != 5);
@@ -55,7 +55,7 @@ int factorial(int n)
     {
         result = 1;
     }
-    else 
+    else
         result = n * factorial(n - 1);
     return result;
 
@@ -64,9 +64,11 @@ int factorial(int n)
 int recFib(int n)
 {
     int result;
-    if (n == 1)
+    if (n == 0)
+        result = 0;
+    else if (n == 1)
         result = 1;
-    else 
+    else
         result = recFib(n - 1) + recFib(n - 2);
     return result;
 }
@@ -88,6 +90,6 @@ void printReverse(int arr[], int n)
     else
     {
         cout << arr[n - 1] << " ";
-        printReverse[arr,n - 1];
+        printReverse(arr, n - 1);
     }
 }
