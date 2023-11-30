@@ -22,7 +22,8 @@ int main()
     srand(static_cast<unsigned int>(time(0)));
     char userAgain = 'Y';
     int correctNumber, userNumber, guessesLeft, correctMinusUser, correctPlusUser;
-
+    int gamesWon = 0;
+    int gamesPlayed = 0;
 
     printHeader();
     while (tolower(userAgain) == 'y')
@@ -37,7 +38,8 @@ int main()
             cin >> userNumber;
             if (userNumber == correctMinusUser || userNumber == correctPlusUser || userNumber == correctNumber)
             {
-                cout << "Congrats! You won. Actual Number is " << correctNumber << ".\n";
+                cout << "Congrats! You won. Actual Number is " << correctNumber << ".\n\n";
+                gamesWon++;
                 break;
             }
             else if (userNumber > correctNumber)
@@ -52,11 +54,20 @@ int main()
             }
             else if (guessesLeft = 0)
             {
-                cout << "You lost. Actual number is " << correctNumber << ".\n";
+                cout << "You lost. Actual number is " << correctNumber << ".\n\n";
             }
         }
         cout << "Do you want to play again (y/n)?: ";
         cin >> userAgain;
+        if (tolower(userAgain) == 'y')
+        {
+            gamesPlayed++
+        }
+        
+        if (tolower(userAgain) == 'n')
+        {
+            cout << "\n\nGame over. You won " << gamesWon << "out of " << gamesPlayed << " games."
+        }
 
     }
     return 0;
@@ -66,7 +77,7 @@ void printHeader()
 {
     cout << "Welcome to a guessing game by Ricardo Diaz.\n";
     cout << "Please guess a number between 1 and 100.\n";
-    cout << "You have up to 5 guesses.\n";
+    cout << "You have up to 5 guesses.\n\n";
 }
 
 int randomNumber()
