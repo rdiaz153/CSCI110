@@ -23,19 +23,21 @@ int main()
     char userAgain = 'Y';
     int correctNumber, userNumber, guessesLeft, correctMinusUser, correctPlusUser;
     int gamesWon = 0;
-    int gamesPlayed = 0;
+    int gamesPlayed = 1;
 
-    printHeader();
+    cout << "Welcome to a guessing game by Ricardo Diaz.\n";
     while (tolower(userAgain) == 'y')
-    {   correctNumber = randomNumber();
+    {   
+        printHeader();
+        correctNumber = randomNumber();
         correctMinusUser = correctNumber - 1;
         correctPlusUser = correctNumber + 1;
-
         guessesLeft = 5;
      
         while(guessesLeft >= 1)
         {   cout << "Enter your guess: ";
             cin >> userNumber;
+           
             if (userNumber == correctMinusUser || userNumber == correctPlusUser || userNumber == correctNumber)
             {
                 cout << "Congrats! You won. Actual Number is " << correctNumber << ".\n\n";
@@ -60,6 +62,8 @@ int main()
         
         cout << "Do you want to play again (y/n)?: ";
         cin >> userAgain;
+        cout << "\n";
+        
         if (tolower(userAgain) == 'y')
         {
             gamesPlayed++;
@@ -67,7 +71,7 @@ int main()
 
         if (tolower(userAgain) == 'n')
         {
-            cout << "\n\nGame over. You won " << gamesWon << "out of " << gamesPlayed << " games.";
+            cout << "\n\nGame over. You won " << gamesWon << " out of " << gamesPlayed << " games.";
         }
 
     }
@@ -76,7 +80,6 @@ int main()
 
 void printHeader()
 {
-    cout << "Welcome to a guessing game by Ricardo Diaz.\n";
     cout << "Please guess a number between 1 and 100.\n";
     cout << "You have up to 5 guesses.\n\n";
 }
