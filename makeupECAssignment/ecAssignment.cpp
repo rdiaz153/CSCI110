@@ -1,6 +1,6 @@
-/*  Program:  Makeup Assignment (Extra Credit)  
-    Author:  Ricardo Diaz   
-    Class:   CSCI 110   
+/*  Program:  Makeup Assignment (Extra Credit)
+    Author:  Ricardo Diaz
+    Class:   CSCI 110
     Date: 11/30/23
     Description: Create the makeup assignment due on 12/5 for extra credit.
     I certify that the code below is my own work.
@@ -27,17 +27,18 @@ int main()
 
     cout << "Welcome to a guessing game by Ricardo Diaz.\n";
     while (tolower(userAgain) == 'y')
-    {   
+    {
         printHeader();
         correctNumber = randomNumber();
         correctMinusUser = correctNumber - 1;
         correctPlusUser = correctNumber + 1;
         guessesLeft = 5;
-     
+
         while (guessesLeft >= 1)
-        {   cout << "Enter your guess: ";
+        {
+            cout << "Enter your guess: ";
             cin >> userNumber;
-           
+
             if (userNumber == correctMinusUser || userNumber == correctPlusUser || userNumber == correctNumber)
             {
                 cout << "Congrats! You won. Actual Number is " << correctNumber << ".\n\n";
@@ -54,16 +55,16 @@ int main()
                 guessesLeft--;
                 cout << "Higher. You have " << guessesLeft << " guesses left.\n";
             }
-        }   
+        }
         if (guessesLeft == 0)
         {
             cout << "You lost. Actual number is " << correctNumber << ".\n\n";
         }
-        
+
         cout << "Do you want to play again (y/n)?: ";
         cin >> userAgain;
         cout << "\n";
-        
+
         if (tolower(userAgain) == 'y')
         {
             gamesPlayed++;
@@ -71,7 +72,7 @@ int main()
 
         if (tolower(userAgain) == 'n')
         {
-            cout << "\n\nGame over. You won " << gamesWon << " out of " << gamesPlayed << " games.";
+            cout << "Game over. You won " << gamesWon << " out of " << gamesPlayed << " games.";
         }
 
     }
