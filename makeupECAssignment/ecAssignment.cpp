@@ -34,7 +34,7 @@ int main()
         correctPlusUser = correctNumber + 1;
         guessesLeft = 5;
      
-        while(guessesLeft >= 1)
+        while (guessesLeft >= 1)
         {   cout << "Enter your guess: ";
             cin >> userNumber;
            
