@@ -1,25 +1,50 @@
+/*  Program: Lab Final Revised Question #1   
+    Author: Ricardo Diaz
+    Class: CSCI 110     
+    Date: 12/12/23      
+    Description: Create the program for lab final revised question 1.
+    I certify that the code below is my own work.
+    Exception(s): N/A
+*/
 #include <iostream>
 #include <fstream>
 
 using namespace std;
 
-void sortAscend(int arr[]);
-void outputArray(int arr[]);
+void sortAscend(int arr[], int numValues);
+void outputArray(int arr[], int threshold);
 int main()
 {
-    int arr[10] = {5, 3, 6, 7, 1, 9, 0, 8, 1, 4};
+    cout << "Author: Ricardo Diaz." << endl;
+    cout << "I certify that I did my own work with no outside help.\n\n";
     
-    sortAscend(arr);
-   outputArray(arr);
+    int numValues, threshold;
+   
+    cout << "How many values? ";
+    cin >> numValues;
+    int a[numValues];
+
+    cout << "Enter " << numValues << " values: ";
+
+    for (int i = 0; i < numValues; i++)
+    {
+        cin >> a[i];
+    }
+    
+    cout << "Enter a threshold: ";
+    cin >> threshold;
+
+    sortAscend(a, numValues);
+    outputArray(a, threshold);
 
     return 0;
 }
 
-void sortAscend(int arr[])
+void sortAscend(int arr[], int numValues)
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < numValues; i++)
     {
-        for (int j = i + 1; j < 10; j++)
+        for (int j = i + 1; j < numValues; j++)
             {
                 if(arr[j] < arr[i])
                 {
@@ -34,17 +59,18 @@ void sortAscend(int arr[])
 
 }
 
-void outputArray(int arr[])
+void outputArray(int arr[], int threshold)
 {
     int i = 0;
 
     ofstream outputFile("problem1.txt");
     if (outputFile.is_open())
-    {
-        outputFile << "Created by Ricardo Diaz" << endl;
-        outputFile << "There are 10 values.\n\n";
+    {   
+        cout << "problem1.txt was created.\n";
+
+        outputFile << "Created by Ricardo Diaz\n\n";
         
-        for (i = 0; i < 10; i++)
+        for (i = 0; i < threshold; i++)
         {
             outputFile << arr[i] << " ";
             if ((i+1) % 5 == 0)
@@ -54,7 +80,7 @@ void outputArray(int arr[])
 
         }
 
-
+        outputFile << "\n\nThere are " << threshold << " values.";
     }
 
     outputFile.close();
